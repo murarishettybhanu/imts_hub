@@ -37,12 +37,11 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <span className="text-primary-foreground font-display font-bold text-xl">I</span>
-            </div>
-            <span className="font-display font-bold text-xl text-foreground">
-              IMTS<span className="gradient-text">HUB</span>
-            </span>
+            <img 
+              src="/logo.png" 
+              alt="IMTS HUB Logo" 
+              className="h-8 lg:h-12 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}

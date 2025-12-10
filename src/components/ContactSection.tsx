@@ -13,14 +13,49 @@ export const ContactSection = () => {
     subject: '',
     message: '',
   });
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: 'Message Sent!',
-      description: 'We will get back to you shortly.',
-    });
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsLoading(true);
+
+    try {
+      // Send email using Formspree
+      const response = await fetch('https://formspree.io/f/xovgkwkp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: 'Message Sent!',
+          description: 'We will get back to you shortly.',
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        toast({
+          title: 'Error',
+          description: 'Failed to send message. Please try again.',
+          variant: 'destructive',
+        });
+      }
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'Failed to send message. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const contactInfo = [
@@ -157,8 +192,14 @@ export const ContactSection = () => {
                   className="bg-secondary/50 border-border focus:border-primary resize-none"
                 />
               </div>
-              <Button variant="hero" size="lg" type="submit" className="w-full">
-                Send Message
+              <Button 
+                variant="hero" 
+                size="lg" 
+                type="submit" 
+                className="w-full" 
+                disabled={isLoading}
+              >
+                {isLoading ? 'Sending...' : 'Send Message'}
                 <Send className="ml-2" size={18} />
               </Button>
             </form>

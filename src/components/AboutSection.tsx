@@ -68,26 +68,11 @@ export const AboutSection = () => {
           {/* Right - Image/Visual */}
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden glass-card p-1">
-              <div className="w-full h-full rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative overflow-hidden">
-                {/* Decorative Elements */}
-                <div className="absolute inset-0 tech-grid opacity-50" />
-                <div className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-primary/30 blur-3xl animate-pulse" />
-                <div className="absolute bottom-1/4 right-1/4 w-40 h-40 rounded-full bg-accent/30 blur-3xl animate-pulse delay-500" />
-                
-                {/* Center Content */}
-                <div className="relative z-10 text-center p-8">
-                  <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
-                    <span className="text-primary-foreground font-display font-bold text-4xl">I</span>
-                  </div>
-                  <h3 className="font-display text-2xl font-bold text-foreground mb-2">
-                    IMTS HUB
-                  </h3>
-                  <p className="text-primary font-medium">Established 2019</p>
-                  <p className="text-muted-foreground text-sm mt-2">
-                    Trademark: INCREDIBLE
-                  </p>
-                </div>
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="IMTS HUB - Electronics Innovation" 
+                className="w-full h-full rounded-xl object-contain bg-gradient-to-br from-primary/10 to-accent/10 p-12"
+              />
             </div>
 
             {/* Floating Badge */}
