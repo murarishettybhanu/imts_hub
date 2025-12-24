@@ -69,9 +69,9 @@ export const AboutSection = () => {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden glass-card p-1">
               <img 
-                src="/logo.png" 
-                alt="IMTS HUB - Electronics Innovation" 
-                className="w-full h-full rounded-xl object-contain bg-gradient-to-br from-primary/10 to-accent/10 p-12"
+                src="/about-image.jpg" 
+                alt="IMTS HUB - Electronics Hardware Innovation" 
+                className="w-full h-full rounded-xl object-cover"
               />
             </div>
 
