@@ -4,45 +4,59 @@ import { Button } from '@/components/ui/button';
 const services = [
   {
     icon: CircuitBoard,
-    title: 'Hardware & PCB Design',
+    title: 'PCB Design & Fabrication',
     description:
-      'Complete schematic and PCB design services including analog, digital, and antenna design for multilayer boards.',
-    features: ['Schematic Design', 'PCB Antenna Design', 'Analog & Digital Circuits'],
-  },
-  {
-    icon: Factory,
-    title: 'PCB Fabrication & Assembly',
-    description:
-      'High-quality PCB fabrication meeting Mil Grade, Space Grade, and Industrial Grade specifications.',
-    features: ['Mil/Space Grade', 'SMD & THT Assembly', 'Complete Testing'],
+      'Complete schematic and PCB design services with high-quality fabrication meeting Mil Grade, Space Grade, and Industrial Grade specifications.',
+    features: ['Schematic Design', 'PCB Antenna Design', 'Multilayer Boards'],
   },
   {
     icon: Cpu,
-    title: 'Embedded Solutions',
+    title: 'SI, PI & Thermal Analysis',
     description:
-      'Custom embedded system development including firmware, FPGA/CPLD, and microcontroller programming.',
-    features: ['Firmware Development', 'FPGA/CPLD Design', 'IoT Solutions'],
+      'Signal Integrity, Power Integrity, and Thermal Analysis for optimal PCB performance and reliability.',
+    features: ['Signal Integrity', 'Power Integrity', 'Thermal Management'],
   },
   {
-    icon: Settings,
-    title: 'Product Development',
+    icon: Factory,
+    title: 'Components Procurement & PCB Assembly',
     description:
-      'End-to-end product development from concept to manufacturing with rapid prototyping capabilities.',
-    features: ['Concept to Production', 'Rapid Prototyping', 'Design for Manufacturing'],
+      'Complete component sourcing and PCB assembly including SMD and THT assembly with rigorous testing.',
+    features: ['Component Sourcing', 'SMD & THT Assembly', 'Quality Testing'],
   },
   {
     icon: Wrench,
-    title: 'Refurbishment & Repair',
+    title: 'Cable Harness & Unit Integration',
     description:
-      'Expert repair and refurbishment services for electronic equipment, especially defense systems.',
-    features: ['Equipment Repair', 'Component Sourcing', 'Technical Support'],
+      'Professional cable harness design, fabrication, and complete system integration services.',
+    features: ['Cable Harness Design', 'System Integration', 'Prototype Assembly'],
+  },
+  {
+    icon: Settings,
+    title: 'Electronic Systems & Sub Systems',
+    description:
+      'Complete electronic systems and sub-systems development tailored to your specific requirements.',
+    features: ['Custom Systems', 'Sub-system Design', 'End-to-End Solutions'],
   },
   {
     icon: Zap,
-    title: 'Testing & Validation',
+    title: 'Turnkey Solutions',
     description:
-      'Comprehensive testing and validation services ensuring product quality and compliance.',
-    features: ['Functional Testing', 'EMI/EMC Testing', 'Quality Assurance'],
+      'Complete turnkey solutions from concept to final product delivery, handling all aspects of manufacturing.',
+    features: ['Concept to Production', 'Full Manufacturing', 'Quality Assurance'],
+  },
+  {
+    icon: Factory,
+    title: 'Sheet Metal Boxes Design, Fabrication & Assembly',
+    description:
+      'Professional design and fabrication of sheet metal enclosures and boxes with precision assembly.',
+    features: ['Enclosure Design', 'Precision Fabrication', 'Custom Assembly'],
+  },
+  {
+    icon: CircuitBoard,
+    title: 'Patch Antennas Design, Fabrication & Testing',
+    description:
+      'Specialized patch antenna design, fabrication, and comprehensive testing for optimal performance.',
+    features: ['Antenna Design', 'Prototyping', 'Performance Testing'],
   },
 ];
 
@@ -97,13 +111,6 @@ export const ServicesSection = () => {
               </ul>
             </div>
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <Button variant="hero" size="lg">
-            View All Services
-          </Button>
         </div>
       </div>
     </section>

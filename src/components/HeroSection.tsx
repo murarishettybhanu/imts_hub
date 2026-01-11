@@ -3,6 +3,11 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 import heroBg from '@/assets/hero-bg.jpg';
 
 export const HeroSection = () => {
+  const handleScroll = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section
       id="home"
@@ -45,11 +50,11 @@ export const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up delay-300">
-            <Button variant="hero" size="xl">
+            <Button variant="hero" size="xl" onClick={() => handleScroll('products')} className="w-full sm:w-auto">
               Our Products
               <ArrowRight className="ml-2" size={20} />
             </Button>
-            <Button variant="heroOutline" size="xl">
+            <Button variant="heroOutline" size="xl" onClick={() => handleScroll('services')} className="w-full sm:w-auto">
               Our Services
             </Button>
           </div>
@@ -58,7 +63,7 @@ export const HeroSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 animate-fade-in delay-500">
             {[
               { value: '10+', label: 'Years Experience' },
-              { value: '500+', label: 'Projects Completed' },
+              { value: '600+', label: 'Projects Completed' },
               { value: '150+', label: 'Happy Clients' },
               { value: '24/7', label: 'Support Available' },
             ].map((stat, index) => (
@@ -73,7 +78,7 @@ export const HeroSection = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="hidden md:block absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
           <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
             <ChevronDown size={32} />
           </a>

@@ -48,7 +48,7 @@ export const Footer = () => {
               </span>
             </a>
             <p className="text-muted-foreground mb-6">
-              Your trusted partner in electronics hardware design and fabrication. 
+              Your trusted partner in electronics hardware design and fabrication.
               Transforming ideas into reality since 2019.
             </p>
             <div className="flex gap-4">
@@ -117,15 +117,8 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} IMTS HUB. All rights reserved.
+            © {new Date().getFullYear()} IMTS HUB Private Limited. All rights reserved.
           </p>
-          <button
-            onClick={scrollToTop}
-            className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-            aria-label="Scroll to top"
-          >
-            <ArrowUp size={18} />
-          </button>
         </div>
       </div>
     </footer>

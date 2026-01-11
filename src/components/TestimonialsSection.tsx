@@ -2,24 +2,45 @@ import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Rajesh Kumar',
-    role: 'Project Director, DRDO',
+    name: 'Vasantha Lakshmi',
+    role: 'Client',
     content:
-      'IMTS HUB delivered exceptional quality on our defense electronics project. Their attention to detail and commitment to meeting specifications was outstanding.',
+      'I have a very good experience with IMTS. I highly recommend this education service to my friends and family members. Service is very good and understandable. Megha ma\'am is very fast responding.',
     rating: 5,
   },
   {
-    name: 'Dr. Priya Sharma',
-    role: 'Head of R&D, TechCorp',
+    name: 'Srikanth Gs',
+    role: 'Client',
     content:
-      'Working with IMTS HUB was a game-changer for our product development. They brought our vision to life with precision engineering.',
+      'I have a very good experience with IMTSHUB. They delivered PCB designs promptly and their quotes are mostly competitive in the market. Company leadership developed an enthusiastic and energetic team to deliver customer needs.',
     rating: 5,
   },
   {
-    name: 'Anil Mehta',
-    role: 'CEO, Industrial Solutions',
+    name: 'Rama Krishna',
+    role: 'Client',
     content:
-      'The team at IMTS HUB understands the importance of quality and reliability. Their PCB designs have never failed us.',
+      'I have a great experience with IMTSHUB. Excellent Multilayer PCB designs and Components & Materials delivered on time. Reasonable quotations. The team works around the clock to meet customer timelines.',
+    rating: 5,
+  },
+  {
+    name: 'Avinash Thota',
+    role: 'Client',
+    content:
+      'One stop shop for all your needs - PCB design, System Level Designs, Sensor based systems, Production, NPI\'s, and Mechanical Enclosures. Always ready to fulfill client requirements with software assistance and training for fresh graduates.',
+    rating: 5,
+  },
+  {
+    name: 'Sankar Rao Battina',
+    role: 'Client',
+    content:
+      'This hub works well and completes jobs in the given time period with reasonable cost. Very respectful response with customers. Their working style is great and they solve problems very easily.',
+    rating: 5,
+  },
+  {
+    name: 'Vineeth Konda',
+    role: 'Client',
+    content:
+      'Excellent service by team. We can get solutions on time with competitive prices. Keep it up and continue your amazing work. Highly satisfied with the service delivery and quality.',
     rating: 5,
   },
 ];
