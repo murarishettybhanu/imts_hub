@@ -50,12 +50,12 @@ export const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up delay-300">
-            <Button variant="hero" size="xl" onClick={() => handleScroll('products')} className="w-full sm:w-auto">
-              Our Products
+            <Button variant="hero" size="xl" onClick={() => handleScroll('services')} className="w-full sm:w-auto">
+              Our Services
               <ArrowRight className="ml-2" size={20} />
             </Button>
-            <Button variant="heroOutline" size="xl" onClick={() => handleScroll('services')} className="w-full sm:w-auto">
-              Our Services
+            <Button variant="heroOutline" size="xl" onClick={() => handleScroll('about')} className="w-full sm:w-auto">
+              Learn More
             </Button>
           </div>
 

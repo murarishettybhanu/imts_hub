@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 
 export const Footer = () => {
   const scrollToTop = () => {
@@ -9,28 +9,24 @@ export const Footer = () => {
     company: [
       { name: 'About Us', href: '#about' },
       { name: 'Services', href: '#services' },
-      { name: 'Products', href: '#products' },
+      // { name: 'Products', href: '#products' },
       { name: 'Contact', href: '#contact' },
     ],
     services: [
-      { name: 'PCB Design', href: '#services' },
-      { name: 'Fabrication', href: '#services' },
-      { name: 'Assembly', href: '#services' },
-      { name: 'Testing', href: '#services' },
+      { name: 'PCB Design & Fabrication', href: '#services' },
+      { name: 'SI, PI & Thermal Analysis', href: '#services' },
+      { name: 'Components Procurement & PCB Assembly', href: '#services' },
+      { name: 'Cable Harness & Unit Integration', href: '#services' },
+      { name: 'Electronic Systems & Sub Systems', href: '#services' },
+      { name: 'Turnkey Solutions', href: '#services' },
+      { name: 'Sheet Metal Boxes Design & Fabrication', href: '#services' },
+      { name: 'Patch Antennas Design & Testing', href: '#services' },
     ],
     legal: [
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms of Service', href: '#' },
-      { name: 'Cookie Policy', href: '#' },
+      { name: 'Privacy Policy', href: '/privacy-policy' },
+      { name: 'Terms of Service', href: '/terms-of-service' },
     ],
   };
-
-  const socialLinks = [
-    { icon: Facebook, href: '#' },
-    { icon: Twitter, href: '#' },
-    { icon: Linkedin, href: '#' },
-    { icon: Instagram, href: '#' },
-  ];
 
   return (
     <footer className="bg-card border-t border-border">
@@ -39,29 +35,17 @@ export const Footer = () => {
         <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <a href="#home" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-xl">I</span>
-              </div>
-              <span className="font-display font-bold text-xl text-foreground">
-                IMTS<span className="gradient-text">HUB</span>
-              </span>
+            <a href="/" className="flex items-center gap-2 mb-6">
+              <img 
+                src="/logo.png" 
+                alt="IMTS HUB Logo" 
+                className="h-8 w-auto"
+              />
             </a>
             <p className="text-muted-foreground mb-6">
               Your trusted partner in electronics hardware design and fabrication.
               Transforming ideas into reality since 2019.
             </p>
-            <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                >
-                  <social.icon size={18} />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Links */}
