@@ -10,7 +10,7 @@ export const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    mobile: '',
     message: '',
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -29,7 +29,7 @@ export const ContactSection = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          subject: formData.subject,
+          mobile: formData.mobile,
           message: formData.message,
         }),
       });
@@ -39,7 +39,7 @@ export const ContactSection = () => {
           title: 'Message Sent!',
           description: 'We will get back to you shortly.',
         });
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setFormData({ name: '', email: '', mobile: '', message: '' });
       } else {
         toast({
           title: 'Error',
@@ -62,22 +62,25 @@ export const ContactSection = () => {
     {
       icon: MapPin,
       title: 'Address',
-      content: 'Hyderabad, Telangana, India',
+      content: 'H.No. 8-7, 1st Floor, South Phase Portion, Near Bank of Maharastra, Sri Sai Nagar, Balapur, Saroor Nagar Mandal, Ranga Reddy Dist,  Hyderabad - 500 005',
+      link: 'https://maps.app.goo.gl/Pje5s6gffrnvfzrcA',
     },
     {
       icon: Phone,
       title: 'Phone',
-      content: '+91 9876543210',
+      content: '+91 63098 00412',
+      onClick: () => window.location.href = 'tel:+916309800412',
     },
     {
       icon: Mail,
       title: 'Email',
       content: 'info@imtshub.com',
+      onClick: () => window.location.href = 'mailto:info@imtshub.com',
     },
     {
       icon: Clock,
       title: 'Working Hours',
-      content: 'Mon - Sat: 9:00 AM - 6:00 PM',
+      content: '9:00 AM - 5:30 PM',
     },
   ];
 
@@ -101,9 +104,9 @@ export const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="space-y-12">
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <div className="glass-card p-8">
               <h3 className="font-display text-2xl font-semibold text-foreground mb-6">
                 Contact Information
@@ -116,65 +119,84 @@ export const ContactSection = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground">{info.title}</h4>
-                      <p className="text-muted-foreground">{info.content}</p>
+                      {info.link ? (
+                        <a 
+                          href={info.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          {info.content}
+                        </a>
+                      ) : info.onClick ? (
+                        <button 
+                          onClick={info.onClick}
+                          className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
+                        >
+                          {info.content}
+                        </button>
+                      ) : (
+                        <p className="text-muted-foreground">{info.content}</p>
+                      )}
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="glass-card h-64 rounded-xl overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-primary mx-auto mb-2" />
-                  <p className="text-muted-foreground">Interactive Map Coming Soon</p>
-                </div>
-              </div>
+            {/* Map */}
+            <div className="glass-card h-96 rounded-xl overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.6823154789577!2d78.4784!3d17.3842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93b0d0d0d0d1%3A0xd0d0d0d0d0d0d0d0!2sH.No.%208-7%2C%20Sri%20Sai%20Nagar%2C%20Balapur!5e0!3m2!1sen!2sin!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="glass-card p-8">
+          <div id="message-form" className="glass-card p-8 scroll-mt-24">
             <h3 className="font-display text-2xl font-semibold text-foreground mb-6">
               Send Us a Message
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">
-                    Your Name
-                  </label>
-                  <Input
-                    placeholder="John Doe"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                    className="bg-secondary/50 border-border focus:border-primary"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">
-                    Email Address
-                  </label>
-                  <Input
-                    type="email"
-                    placeholder="john@example.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    required
-                    className="bg-secondary/50 border-border focus:border-primary"
-                  />
-                </div>
+              <div>
+                <label className="text-sm font-medium text-foreground mb-2 block">
+                  Your Name
+                </label>
+                <Input
+                  placeholder="John Doe"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  required
+                  className="bg-secondary/50 border-border focus:border-primary"
+                />
               </div>
               <div>
                 <label className="text-sm font-medium text-foreground mb-2 block">
-                  Subject
+                  Email Address
                 </label>
                 <Input
-                  placeholder="How can we help?"
-                  value={formData.subject}
-                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  type="email"
+                  placeholder="john@example.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  required
+                  className="bg-secondary/50 border-border focus:border-primary"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-foreground mb-2 block">
+                  Mobile Number
+                </label>
+                <Input
+                  type="tel"
+                  placeholder="+91 98765 43210"
+                  value={formData.mobile}
+                  onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                   required
                   className="bg-secondary/50 border-border focus:border-primary"
                 />

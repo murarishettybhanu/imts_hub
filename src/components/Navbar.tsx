@@ -24,13 +24,18 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleGetStarted = () => {
+    const element = document.getElementById('message-form');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <nav
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
           ? 'bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg'
-          : 'bg-transparent'
+          : 'bg-background/100 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none'
       )}
     >
       <div className="container mx-auto px-4 lg:px-8">
@@ -60,7 +65,7 @@ export const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button variant="hero" size="lg">
+            <Button variant="hero" size="lg" onClick={handleGetStarted}>
               Get Started
             </Button>
           </div>
@@ -93,7 +98,7 @@ export const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button variant="hero" size="lg" className="mt-2">
+            <Button variant="hero" size="lg" className="mt-2" onClick={handleGetStarted}>
               Get Started
             </Button>
           </div>
