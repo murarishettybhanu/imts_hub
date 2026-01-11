@@ -18,6 +18,16 @@
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      // Handle GitHub Pages SPA redirect
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
     <meta name="twitter:title" content="IMTS HUB - Electronics Hardware Solutions" />
     <meta name="twitter:description" content="Leading business accelerator for electronics hardware design and fabrication." />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
