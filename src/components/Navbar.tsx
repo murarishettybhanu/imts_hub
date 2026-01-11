@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { getImagePath } from '@/lib/imagePath';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -43,7 +44,7 @@ export const Navbar = () => {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
             <img 
-              src="/logo.png" 
+              src={getImagePath('/logo.png')}
               alt="IMTS HUB Logo" 
               className="h-8 lg:h-12 w-auto"
             />

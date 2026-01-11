@@ -1,4 +1,5 @@
 import { Target, Lightbulb, Shield } from 'lucide-react';
+import { getImagePath } from '@/lib/imagePath';
 
 export const AboutSection = () => {
   return (
@@ -69,7 +70,7 @@ export const AboutSection = () => {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden glass-card p-1">
               <img 
-                src="/about-image.jpg" 
+                src={getImagePath('/about-image.jpg')}
                 alt="IMTS HUB - Electronics Hardware Innovation" 
                 className="w-full h-full rounded-xl object-cover"
               />

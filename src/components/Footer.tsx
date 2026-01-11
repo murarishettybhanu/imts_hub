@@ -1,4 +1,5 @@
 import { ArrowUp } from 'lucide-react';
+import { getImagePath } from '@/lib/imagePath';
 
 export const Footer = () => {
   const scrollToTop = () => {
@@ -37,7 +38,7 @@ export const Footer = () => {
           <div className="lg:col-span-1">
             <a href="/" className="flex items-center gap-2 mb-6">
               <img 
-                src="/logo.png" 
+                src={getImagePath('/logo.png')}
                 alt="IMTS HUB Logo" 
                 className="h-8 w-auto"
               />
