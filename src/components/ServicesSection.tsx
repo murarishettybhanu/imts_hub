@@ -11,9 +11,9 @@ const services = [
       'Complete schematic and PCB design services with high-quality fabrication meeting Mil Grade, Space Grade, and Industrial Grade specifications.',
     features: ['Schematic Design', 'PCB Antenna Design', 'Multilayer Boards'],
     images: [
-      '/services/PCB Design & Fabrication/01.jpg',
-      '/services/PCB Design & Fabrication/02.jpg',
-      '/services/PCB Design & Fabrication/03.jpg',
+      getImagePath('/services/PCB Design & Fabrication/01.jpg'),
+      getImagePath('/services/PCB Design & Fabrication/02.jpg'),
+      getImagePath('/services/PCB Design & Fabrication/03.jpg'),
     ],
   },
   {
@@ -23,9 +23,9 @@ const services = [
       'Signal Integrity, Power Integrity, and Thermal Analysis for optimal PCB performance and reliability.',
     features: ['Signal Integrity', 'Power Integrity', 'Thermal Management'],
     images: [
-      '/services/SI, PI & Thermal Analysis/04.jpg',
-      '/services/SI, PI & Thermal Analysis/05.jpg',
-      '/services/SI, PI & Thermal Analysis/06.jpg',
+      getImagePath('/services/SI, PI & Thermal Analysis/04.jpg'),
+      getImagePath('/services/SI, PI & Thermal Analysis/05.jpg'),
+      getImagePath('/services/SI, PI & Thermal Analysis/06.jpg'),
     ],
   },
   {
@@ -35,9 +35,9 @@ const services = [
       'Complete component sourcing and PCB assembly including SMD and THT assembly with rigorous testing.',
     features: ['Component Sourcing', 'SMD & THT Assembly', 'Quality Testing'],
     images: [
-      '/services/Components Procurement & PCB Assembly/07.jpg',
-      '/services/Components Procurement & PCB Assembly/08.jpg',
-      '/services/Components Procurement & PCB Assembly/09.jpg',
+      getImagePath('/services/Components Procurement & PCB Assembly/07.jpg'),
+      getImagePath('/services/Components Procurement & PCB Assembly/08.jpg'),
+      getImagePath('/services/Components Procurement & PCB Assembly/09.jpg'),
     ],
   },
   {
@@ -47,9 +47,9 @@ const services = [
       'Professional cable harness design, fabrication, and complete system integration services.',
     features: ['Cable Harness Design', 'System Integration', 'Prototype Assembly'],
     images: [
-      '/services/Cable Harness & Unit Integration/11.jpg',
-      '/services/Cable Harness & Unit Integration/12.jpg',
-      '/services/Cable Harness & Unit Integration/13.jpg',
+      getImagePath('/services/Cable Harness & Unit Integration/11.jpg'),
+      getImagePath('/services/Cable Harness & Unit Integration/12.jpg'),
+      getImagePath('/services/Cable Harness & Unit Integration/13.jpg'),
     ],
   },
   {
@@ -59,9 +59,9 @@ const services = [
       'Complete electronic systems and sub-systems development tailored to your specific requirements.',
     features: ['Custom Systems', 'Sub-system Design', 'End-to-End Solutions'],
     images: [
-      '/services/Electronic Systems & Sub Systems/04.jpg',
-      '/services/Electronic Systems & Sub Systems/05.jpg',
-      '/services/Electronic Systems & Sub Systems/06.jpg',
+      getImagePath('/services/Electronic Systems & Sub Systems/04.jpg'),
+      getImagePath('/services/Electronic Systems & Sub Systems/05.jpg'),
+      getImagePath('/services/Electronic Systems & Sub Systems/06.jpg'),
     ],
   },
   {
@@ -71,9 +71,9 @@ const services = [
       'Complete turnkey solutions from concept to final product delivery, handling all aspects of manufacturing.',
     features: ['Concept to Production', 'Full Manufacturing', 'Quality Assurance'],
     images: [
-      '/services/Turnkey Solutions/17.jpg',
-      '/services/Turnkey Solutions/18.jpg',
-      '/services/Turnkey Solutions/19.jpg',
+      getImagePath('/services/Turnkey Solutions/17.jpg'),
+      getImagePath('/services/Turnkey Solutions/18.jpg'),
+      getImagePath('/services/Turnkey Solutions/19.jpg'),
     ],
   },
   {
@@ -83,9 +83,9 @@ const services = [
       'Professional design and fabrication of sheet metal enclosures and boxes with precision assembly.',
     features: ['Enclosure Design', 'Precision Fabrication', 'Custom Assembly'],
     images: [
-      '/services/Sheet Metal boxes design, Fabrication & Assembly/22.jpg',
-      '/services/Sheet Metal boxes design, Fabrication & Assembly/23.jpg',
-      '/services/Sheet Metal boxes design, Fabrication & Assembly/24.jpg',
+      getImagePath('/services/Sheet Metal boxes design, Fabrication & Assembly/22.jpg'),
+      getImagePath('/services/Sheet Metal boxes design, Fabrication & Assembly/23.jpg'),
+      getImagePath('/services/Sheet Metal boxes design, Fabrication & Assembly/24.jpg'),
     ],
   },
   {
@@ -95,9 +95,9 @@ const services = [
       'Specialized patch antenna design, fabrication, and comprehensive testing for optimal performance.',
     features: ['Antenna Design', 'Prototyping', 'Performance Testing'],
     images: [
-      '/services/Patch Antennas Design, Fabrication & Testing/28.jpg',
-      '/services/Patch Antennas Design, Fabrication & Testing/29.jpg',
-      '/services/Patch Antennas Design, Fabrication & Testing/30.jpg',
+      getImagePath('/services/Patch Antennas Design, Fabrication & Testing/28.jpg'),
+      getImagePath('/services/Patch Antennas Design, Fabrication & Testing/29.jpg'),
+      getImagePath('/services/Patch Antennas Design, Fabrication & Testing/30.jpg'),
     ],
   },
 ];
