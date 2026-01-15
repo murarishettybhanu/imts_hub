@@ -1,9 +1,18 @@
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Download } from 'lucide-react';
 import { getImagePath } from '@/lib/imagePath';
 
 export const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const downloadBrochure = () => {
+    const link = document.createElement('a');
+    link.href = '/pdfs/IMTS.pdf';
+    link.download = 'IMTS-Brochure.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const footerLinks = {
@@ -104,6 +113,13 @@ export const Footer = () => {
           <p className="text-muted-foreground text-sm">
             © {new Date().getFullYear()} IMTS HUB Private Limited. All rights reserved.
           </p>
+          <button
+            onClick={downloadBrochure}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground transition-colors"
+          >
+            <Download size={18} />
+            Download Brochure
+          </button>
         </div>
       </div>
     </footer>

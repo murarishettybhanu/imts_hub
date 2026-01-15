@@ -26,14 +26,8 @@ export const HeroSection = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] hero-glow opacity-50" />
 
       {/* Content */}
-      <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-20">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 md:pt-20">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-8 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Business Accelerator & Incubator
-          </div>
-
           {/* Headline */}
           <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-6 animate-slide-up">
             We Provide{' '}
@@ -44,8 +38,7 @@ export const HeroSection = () => {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-up delay-200">
-            Transform your electronics hardware design and fabrication with our expert team. 
-            From concept to production, we deliver quality and innovation.
+            We specialise in the Design, Development, and Manufacture of a wide range of Electronic systems & sub systems.
           </p>
 
           {/* CTA Buttons */}

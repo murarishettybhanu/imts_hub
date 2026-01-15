@@ -2,10 +2,10 @@ import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Vasantha Lakshmi',
+    name: 'Shashidhar T',
     role: 'Client',
     content:
-      'I have a very good experience with IMTS. I highly recommend this education service to my friends and family members. Service is very good and understandable. Megha ma\'am is very fast responding.',
+      'Simply I can say that work wise IMTS offers"Good quality at low price". They have good commitment towards work and timelines.',
     rating: 5,
   },
   {
@@ -70,7 +70,7 @@ export const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="glass-card p-8 relative group hover:border-primary/50 transition-all duration-300"
+              className="glass-card p-8 relative group hover:border-primary/50 transition-all duration-300 flex flex-col"
             >
               {/* Quote Icon */}
               <div className="absolute top-6 right-6 text-primary/20">
@@ -85,10 +85,10 @@ export const TestimonialsSection = () => {
               </div>
 
               {/* Content */}
-              <p className="text-foreground mb-6 relative z-10">"{testimonial.content}"</p>
+              <p className="text-foreground mb-6 relative z-10 flex-grow">"{testimonial.content}"</p>
 
               {/* Author */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 mt-auto">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                   <span className="text-primary-foreground font-semibold text-lg">
                     {testimonial.name.charAt(0)}

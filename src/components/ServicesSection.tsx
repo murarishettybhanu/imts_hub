@@ -1,5 +1,7 @@
-import { CircuitBoard, Cpu, Settings, Wrench, Zap, Factory } from 'lucide-react';
+import { CircuitBoard, Cpu, Settings, Wrench, Zap, Factory, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+import { getImagePath } from '@/lib/imagePath';
 
 const services = [
   {
@@ -8,6 +10,11 @@ const services = [
     description:
       'Complete schematic and PCB design services with high-quality fabrication meeting Mil Grade, Space Grade, and Industrial Grade specifications.',
     features: ['Schematic Design', 'PCB Antenna Design', 'Multilayer Boards'],
+    images: [
+      '/services/PCB Design & Fabrication/01.jpg',
+      '/services/PCB Design & Fabrication/02.jpg',
+      '/services/PCB Design & Fabrication/03.jpg',
+    ],
   },
   {
     icon: Cpu,
@@ -15,6 +22,11 @@ const services = [
     description:
       'Signal Integrity, Power Integrity, and Thermal Analysis for optimal PCB performance and reliability.',
     features: ['Signal Integrity', 'Power Integrity', 'Thermal Management'],
+    images: [
+      '/services/SI, PI & Thermal Analysis/04.jpg',
+      '/services/SI, PI & Thermal Analysis/05.jpg',
+      '/services/SI, PI & Thermal Analysis/06.jpg',
+    ],
   },
   {
     icon: Factory,
@@ -22,6 +34,11 @@ const services = [
     description:
       'Complete component sourcing and PCB assembly including SMD and THT assembly with rigorous testing.',
     features: ['Component Sourcing', 'SMD & THT Assembly', 'Quality Testing'],
+    images: [
+      '/services/Components Procurement & PCB Assembly/07.jpg',
+      '/services/Components Procurement & PCB Assembly/08.jpg',
+      '/services/Components Procurement & PCB Assembly/09.jpg',
+    ],
   },
   {
     icon: Wrench,
@@ -29,6 +46,11 @@ const services = [
     description:
       'Professional cable harness design, fabrication, and complete system integration services.',
     features: ['Cable Harness Design', 'System Integration', 'Prototype Assembly'],
+    images: [
+      '/services/Cable Harness & Unit Integration/11.jpg',
+      '/services/Cable Harness & Unit Integration/12.jpg',
+      '/services/Cable Harness & Unit Integration/13.jpg',
+    ],
   },
   {
     icon: Settings,
@@ -36,6 +58,11 @@ const services = [
     description:
       'Complete electronic systems and sub-systems development tailored to your specific requirements.',
     features: ['Custom Systems', 'Sub-system Design', 'End-to-End Solutions'],
+    images: [
+      '/services/Electronic Systems & Sub Systems/04.jpg',
+      '/services/Electronic Systems & Sub Systems/05.jpg',
+      '/services/Electronic Systems & Sub Systems/06.jpg',
+    ],
   },
   {
     icon: Zap,
@@ -43,6 +70,11 @@ const services = [
     description:
       'Complete turnkey solutions from concept to final product delivery, handling all aspects of manufacturing.',
     features: ['Concept to Production', 'Full Manufacturing', 'Quality Assurance'],
+    images: [
+      '/services/Turnkey Solutions/17.jpg',
+      '/services/Turnkey Solutions/18.jpg',
+      '/services/Turnkey Solutions/19.jpg',
+    ],
   },
   {
     icon: Factory,
@@ -50,6 +82,11 @@ const services = [
     description:
       'Professional design and fabrication of sheet metal enclosures and boxes with precision assembly.',
     features: ['Enclosure Design', 'Precision Fabrication', 'Custom Assembly'],
+    images: [
+      '/services/Sheet Metal boxes design, Fabrication & Assembly/22.jpg',
+      '/services/Sheet Metal boxes design, Fabrication & Assembly/23.jpg',
+      '/services/Sheet Metal boxes design, Fabrication & Assembly/24.jpg',
+    ],
   },
   {
     icon: CircuitBoard,
@@ -57,8 +94,89 @@ const services = [
     description:
       'Specialized patch antenna design, fabrication, and comprehensive testing for optimal performance.',
     features: ['Antenna Design', 'Prototyping', 'Performance Testing'],
+    images: [
+      '/services/Patch Antennas Design, Fabrication & Testing/28.jpg',
+      '/services/Patch Antennas Design, Fabrication & Testing/29.jpg',
+      '/services/Patch Antennas Design, Fabrication & Testing/30.jpg',
+    ],
   },
 ];
+
+const ServiceCard = ({ service }: { service: typeof services[0] }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % service.images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + service.images.length) % service.images.length);
+  };
+
+  return (
+    <div className="glass-card p-6 group hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+      {/* Image Carousel */}
+      <div className="relative mb-6 rounded-lg overflow-hidden h-48 bg-secondary group-hover:shadow-lg transition-all">
+        <img
+          src={service.images[currentImageIndex]}
+          alt={service.title}
+          className="w-full h-full object-cover"
+        />
+        
+        {/* Carousel Controls */}
+        <button
+          onClick={prevImage}
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-primary/80 hover:bg-primary text-primary-foreground rounded-full p-2 transition-all"
+          aria-label="Previous image"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <button
+          onClick={nextImage}
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-primary/80 hover:bg-primary text-primary-foreground rounded-full p-2 transition-all"
+          aria-label="Next image"
+        >
+          <ChevronRight size={20} />
+        </button>
+
+        {/* Carousel Indicators */}
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
+          {service.images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-2 h-2 rounded-full transition-all ${
+                index === currentImageIndex ? 'bg-primary w-6' : 'bg-primary/50'
+              }`}
+              aria-label={`Go to image ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Icon */}
+      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-6 group-hover:from-primary/30 group-hover:to-accent/30 transition-all">
+        <service.icon className="w-7 h-7 text-primary" />
+      </div>
+
+      {/* Content */}
+      <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+        {service.title}
+      </h3>
+      <p className="text-muted-foreground mb-4 text-sm">{service.description}</p>
+
+      {/* Features */}
+      <ul className="space-y-2 mt-auto">
+        {service.features.map((feature, i) => (
+          <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+            <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+            {feature}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export const ServicesSection = () => {
   return (
@@ -85,31 +203,7 @@ export const ServicesSection = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="glass-card p-6 group hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
-            >
-              {/* Icon */}
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-6 group-hover:from-primary/30 group-hover:to-accent/30 transition-all">
-                <service.icon className="w-7 h-7 text-primary" />
-              </div>
-
-              {/* Content */}
-              <h3 className="font-display text-xl font-semibold text-foreground mb-3">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground mb-4">{service.description}</p>
-
-              {/* Features */}
-              <ul className="space-y-2">
-                {service.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ServiceCard key={index} service={service} />
           ))}
         </div>
       </div>
