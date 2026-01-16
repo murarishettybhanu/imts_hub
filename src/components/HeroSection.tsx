@@ -37,7 +37,7 @@ export const HeroSection = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-up delay-200">
+          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 animate-slide-up delay-200">
             We specialise in the Design, Development, and Manufacture of a wide range of Electronic systems & sub systems.
           </p>
 
@@ -56,8 +56,8 @@ export const HeroSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 animate-fade-in delay-500">
             {[
               { value: '10+', label: 'Years Experience' },
-              { value: '600+', label: 'Projects Completed' },
-              { value: '150+', label: 'Happy Clients' },
+              { value: '750+', label: 'Projects Completed' },
+              { value: '200+', label: 'Happy Clients' },
               { value: '24/7', label: 'Support Available' },
             ].map((stat, index) => (
               <div key={index} className="text-center">

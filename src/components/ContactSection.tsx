@@ -63,7 +63,7 @@ export const ContactSection = () => {
       icon: MapPin,
       title: 'Address',
       content: 'H.No. 8-7, 1st Floor, South Phase Portion, Near Bank of Maharastra, Sri Sai Nagar, Balapur, Saroor Nagar Mandal, Ranga Reddy Dist,  Hyderabad - 500 005',
-      link: 'https://maps.app.goo.gl/Pje5s6gffrnvfzrcA',
+      link: 'https://maps.app.goo.gl/AnbWWNcD7mgDiXU9A',
     },
     {
       icon: Phone,
@@ -124,19 +124,19 @@ export const ContactSection = () => {
                           href={info.link} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-primary transition-colors"
+                          className="text-muted-foreground text-base hover:text-primary transition-colors"
                         >
                           {info.content}
                         </a>
                       ) : info.onClick ? (
                         <button 
                           onClick={info.onClick}
-                          className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
+                          className="text-muted-foreground text-base hover:text-primary transition-colors cursor-pointer text-left"
                         >
                           {info.content}
                         </button>
                       ) : (
-                        <p className="text-muted-foreground">{info.content}</p>
+                        <p className="text-muted-foreground text-base">{info.content}</p>
                       )}
                     </div>
                   </div>

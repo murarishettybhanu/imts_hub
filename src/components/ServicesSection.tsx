@@ -163,12 +163,12 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
       <h3 className="font-display text-xl font-semibold text-foreground mb-3">
         {service.title}
       </h3>
-      <p className="text-muted-foreground mb-4 text-sm">{service.description}</p>
+      <p className="text-muted-foreground mb-4 text-base">{service.description}</p>
 
       {/* Features */}
       <ul className="space-y-2 mt-auto">
         {service.features.map((feature, i) => (
-          <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+          <li key={i} className="flex items-center gap-2 text-base text-muted-foreground">
             <div className="w-1.5 h-1.5 rounded-full bg-primary" />
             {feature}
           </li>

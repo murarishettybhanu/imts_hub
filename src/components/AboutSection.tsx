@@ -18,8 +18,7 @@ export const AboutSection = () => {
             <span className="gradient-text">Electronics Innovation</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            IMTS HUB is a Business Accelerator and startup incubator specializing in electronics 
-            hardware design and fabrication, founded by a team of experienced technocrats and engineers.
+            IMTS HUB specialises in the design, development, and manufacture of a wide range of electronic systems and sub-systems, delivering robust, scalable, and reliable solutions through structured engineering processes, quality-driven execution, and strong technical governance.
           </p>
         </div>
 
@@ -59,7 +58,7 @@ export const AboutSection = () => {
                     <h3 className="font-display text-xl font-semibold text-foreground mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-muted-foreground">{item.description}</p>
+                    <p className="text-muted-foreground text-lg">{item.description}</p>
                   </div>
                 </div>
               </div>
@@ -69,9 +68,9 @@ export const AboutSection = () => {
           {/* Right - Image/Visual */}
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden glass-card p-1">
-              <img 
+              <img
                 src={getImagePath('/about-image.jpg')}
-                alt="IMTS HUB - Electronics Hardware Innovation" 
+                alt="IMTS HUB - Electronics Hardware Innovation"
                 className="w-full h-full rounded-xl object-cover"
               />
             </div>

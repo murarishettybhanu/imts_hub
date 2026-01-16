@@ -46,15 +46,14 @@ export const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <a href="/" className="flex items-center gap-2 mb-6">
-              <img 
+              <img
                 src={getImagePath('/logo.png')}
-                alt="IMTS HUB Logo" 
+                alt="IMTS HUB Logo"
                 className="h-8 w-auto"
               />
             </a>
             <p className="text-muted-foreground mb-6">
-              Your trusted partner in electronics hardware design and fabrication.
-              Transforming ideas into reality since 2019.
+              A trusted partner in electronic systems and sub-system development and manufacturing, committed to quality and innovation since 2019.
             </p>
           </div>
 
