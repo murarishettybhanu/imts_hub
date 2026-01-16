@@ -11,7 +11,7 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const basename = import.meta.env.MODE === 'development' ? '/' : '/imts_hub/';
+  const basename = import.meta.env.DEV ? '/' : '/imts_hub/';
   
   return (
     <QueryClientProvider client={queryClient}>

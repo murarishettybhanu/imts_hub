@@ -18,7 +18,7 @@ export const AboutSection = () => {
             <span className="gradient-text">Electronics Innovation</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            IMTS HUB specialises in the design, development, and manufacture of a wide range of electronic systems and sub-systems, delivering robust, scalable, and reliable solutions through structured engineering processes, quality-driven execution, and strong technical governance.
+            IMTS HUB specialises in the design, development and manufacture of a wide range of electronic systems and sub-systems, delivering robust, scalable, and reliable solutions through structured Engineering Processes.
           </p>
         </div>
 

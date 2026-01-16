@@ -1,7 +1,11 @@
 import { ArrowUp, Download } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { getImagePath } from '@/lib/imagePath';
 
 export const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -15,26 +19,39 @@ export const Footer = () => {
     document.body.removeChild(link);
   };
 
+  const handleSectionClick = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        element?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const footerLinks = {
     company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Services', href: '#services' },
+      { name: 'About Us', href: '#about', isSection: true },
+      { name: 'Services', href: '#services', isSection: true },
       // { name: 'Products', href: '#products' },
-      { name: 'Contact', href: '#contact' },
+      { name: 'Contact', href: '#contact', isSection: true },
     ],
     services: [
-      { name: 'PCB Design & Fabrication', href: '#services' },
-      { name: 'SI, PI & Thermal Analysis', href: '#services' },
-      { name: 'Components Procurement & PCB Assembly', href: '#services' },
-      { name: 'Cable Harness & Unit Integration', href: '#services' },
-      { name: 'Electronic Systems & Sub Systems', href: '#services' },
-      { name: 'Turnkey Solutions', href: '#services' },
-      { name: 'Sheet Metal Boxes Design & Fabrication', href: '#services' },
-      { name: 'Patch Antennas Design & Testing', href: '#services' },
+      { name: 'PCB Design & Fabrication', href: '#services', isSection: true },
+      { name: 'SI, PI & Thermal Analysis', href: '#services', isSection: true },
+      { name: 'Components Procurement & PCB Assembly', href: '#services', isSection: true },
+      { name: 'Cable Harness & Unit Integration', href: '#services', isSection: true },
+      { name: 'Electronic Systems & Sub Systems', href: '#services', isSection: true },
+      { name: 'Turnkey Solutions', href: '#services', isSection: true },
+      { name: 'Sheet Metal Boxes Design & Fabrication', href: '#services', isSection: true },
+      { name: 'Patch Antennas Design & Testing', href: '#services', isSection: true },
     ],
     legal: [
-      { name: 'Privacy Policy', href: '/privacy-policy' },
-      { name: 'Terms of Service', href: '/terms-of-service' },
+      { name: 'Privacy Policy', href: '/privacy-policy', isSection: false },
+      { name: 'Terms of Service', href: '/terms-of-service', isSection: false },
     ],
   };
 
@@ -63,12 +80,21 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </a>
+                  {link.isSection ? (
+                    <button
+                      onClick={() => handleSectionClick(link.href.substring(1))}
+                      className="text-muted-foreground hover:text-primary transition-colors text-left"
+                    >
+                      {link.name}
+                    </button>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -79,12 +105,12 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                  <button
+                    onClick={() => handleSectionClick(link.href.substring(1))}
+                    className="text-muted-foreground hover:text-primary transition-colors text-left"
                   >
                     {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>

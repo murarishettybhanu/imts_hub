@@ -1,21 +1,24 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { getImagePath } from '@/lib/imagePath';
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Products', href: '#products' },
-  { name: 'Testimonials', href: '#testimonials' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', sectionId: 'home' },
+  { name: 'About', sectionId: 'about' },
+  { name: 'Services', sectionId: 'services' },
+  { name: 'Products', sectionId: 'products' },
+  { name: 'Testimonials', sectionId: 'testimonials' },
+  { name: 'Contact', sectionId: 'contact' },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,9 +28,31 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        element?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
+
   const handleGetStarted = () => {
-    const element = document.getElementById('message-form');
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById('message-form');
+        element?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const element = document.getElementById('message-form');
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -42,25 +67,28 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
+          <button 
+            onClick={() => handleNavClick('home')}
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+          >
             <img 
               src={getImagePath('/logo.png')}
               alt="IMTS HUB Logo" 
               className="h-8 lg:h-12 w-auto"
             />
-          </a>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
+                onClick={() => handleNavClick(link.sectionId)}
                 className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-              </a>
+              </button>
             ))}
           </div>
 
@@ -90,14 +118,13 @@ export const Navbar = () => {
         >
           <div className="flex flex-col gap-4 pt-4 border-t border-border/50">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium px-2"
-                onClick={() => setIsOpen(false)}
+                onClick={() => handleNavClick(link.sectionId)}
+                className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium px-2 text-left"
               >
                 {link.name}
-              </a>
+              </button>
             ))}
             <Button variant="hero" size="lg" className="mt-2" onClick={handleGetStarted}>
               Get Started

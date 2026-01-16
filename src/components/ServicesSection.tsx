@@ -38,6 +38,7 @@ const services = [
       getImagePath('/services/Components Procurement & PCB Assembly/07.jpg'),
       getImagePath('/services/Components Procurement & PCB Assembly/08.jpg'),
       getImagePath('/services/Components Procurement & PCB Assembly/09.jpg'),
+      getImagePath('/services/Components Procurement & PCB Assembly/10.jpg'),
     ],
   },
   {
@@ -50,6 +51,9 @@ const services = [
       getImagePath('/services/Cable Harness & Unit Integration/11.jpg'),
       getImagePath('/services/Cable Harness & Unit Integration/12.jpg'),
       getImagePath('/services/Cable Harness & Unit Integration/13.jpg'),
+      getImagePath('/services/Cable Harness & Unit Integration/14.jpg'),
+      getImagePath('/services/Cable Harness & Unit Integration/15.jpg'),
+      getImagePath('/services/Cable Harness & Unit Integration/16.jpg'),
     ],
   },
   {
@@ -74,6 +78,8 @@ const services = [
       getImagePath('/services/Turnkey Solutions/17.jpg'),
       getImagePath('/services/Turnkey Solutions/18.jpg'),
       getImagePath('/services/Turnkey Solutions/19.jpg'),
+      getImagePath('/services/Turnkey Solutions/20.jpg'),
+      getImagePath('/services/Turnkey Solutions/21.jpg'),
     ],
   },
   {
@@ -86,6 +92,9 @@ const services = [
       getImagePath('/services/Sheet Metal boxes design, Fabrication & Assembly/22.jpg'),
       getImagePath('/services/Sheet Metal boxes design, Fabrication & Assembly/23.jpg'),
       getImagePath('/services/Sheet Metal boxes design, Fabrication & Assembly/24.jpg'),
+      getImagePath('/services/Sheet Metal boxes design, Fabrication & Assembly/25.jpg'),
+      getImagePath('/services/Sheet Metal boxes design, Fabrication & Assembly/26.jpg'),
+      getImagePath('/services/Sheet Metal boxes design, Fabrication & Assembly/27.jpg'),
     ],
   },
   {
@@ -98,6 +107,9 @@ const services = [
       getImagePath('/services/Patch Antennas Design, Fabrication & Testing/28.jpg'),
       getImagePath('/services/Patch Antennas Design, Fabrication & Testing/29.jpg'),
       getImagePath('/services/Patch Antennas Design, Fabrication & Testing/30.jpg'),
+      getImagePath('/services/Patch Antennas Design, Fabrication & Testing/31.jpg'),
+      getImagePath('/services/Patch Antennas Design, Fabrication & Testing/32.jpg'),
+      getImagePath('/services/Patch Antennas Design, Fabrication & Testing/33.jpg'),
     ],
   },
 ];
@@ -122,7 +134,7 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
           alt={service.title}
           className="w-full h-full object-cover"
         />
-        
+
         {/* Carousel Controls */}
         <button
           onClick={prevImage}
@@ -145,9 +157,8 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
             <button
               key={index}
               onClick={() => setCurrentImageIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                index === currentImageIndex ? 'bg-primary w-6' : 'bg-primary/50'
-              }`}
+              className={`w-2 h-2 rounded-full transition-all ${index === currentImageIndex ? 'bg-primary w-6' : 'bg-primary/50'
+                }`}
               aria-label={`Go to image ${index + 1}`}
             />
           ))}
@@ -195,7 +206,7 @@ export const ServicesSection = () => {
             Comprehensive <span className="gradient-text">Electronics Solutions</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            From design to manufacturing, we offer end-to-end electronics solutions 
+            From design to manufacturing, we offer end-to-end electronics solutions
             tailored to meet your specific requirements.
           </p>
         </div>

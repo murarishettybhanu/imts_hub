@@ -5,13 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const isGitHubPages = process.env.GITHUB_PAGES === "true";
+  const isDevelopment = mode === "development";
   
   return {
-    base: isGitHubPages ? "/imts_hub/" : "./",
-    define: {
-      "import.meta.env.VITE_GITHUB_PAGES": JSON.stringify(isGitHubPages),
-    },
+    base: isDevelopment ? "/" : "/imts_hub/",
     server: {
       host: "::",
       port: 8080,
