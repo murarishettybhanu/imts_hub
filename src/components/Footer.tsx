@@ -49,17 +49,13 @@ export const Footer = () => {
       { name: 'Sheet Metal Boxes Design & Fabrication', href: '#services', isSection: true },
       { name: 'Patch Antennas Design & Testing', href: '#services', isSection: true },
     ],
-    legal: [
-      { name: 'Privacy Policy', href: '/privacy-policy', isSection: false },
-      { name: 'Terms of Service', href: '/terms-of-service', isSection: false },
-    ],
   };
 
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Main Footer */}
-        <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="py-16 grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <a href="/" className="flex items-center gap-2 mb-6">
@@ -75,6 +71,22 @@ export const Footer = () => {
           </div>
 
           {/* Links */}
+          <div>
+            <h4 className="font-display font-semibold text-foreground mb-4">Services</h4>
+            <ul className="space-y-3">
+              {footerLinks.services.map((link, index) => (
+                <li key={index}>
+                  <button
+                    onClick={() => handleSectionClick(link.href.substring(1))}
+                    className="text-muted-foreground hover:text-primary transition-colors text-left"
+                  >
+                    {link.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <div>
             <h4 className="font-display font-semibold text-foreground mb-4">Company</h4>
             <ul className="space-y-3">
@@ -95,38 +107,6 @@ export const Footer = () => {
                       {link.name}
                     </a>
                   )}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-display font-semibold text-foreground mb-4">Services</h4>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => handleSectionClick(link.href.substring(1))}
-                    className="text-muted-foreground hover:text-primary transition-colors text-left"
-                  >
-                    {link.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-display font-semibold text-foreground mb-4">Legal</h4>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </a>
                 </li>
               ))}
             </ul>
