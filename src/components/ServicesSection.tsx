@@ -59,9 +59,9 @@ const services = [
       'Complete electronic systems and sub-systems development tailored to your specific requirements.',
     features: ['Custom Systems', 'Sub-system Design', 'End-to-End Solutions'],
     images: [
-      getImagePath('/services/Electronic Systems & Sub Systems/04.jpg'),
-      getImagePath('/services/Electronic Systems & Sub Systems/05.jpg'),
-      getImagePath('/services/Electronic Systems & Sub Systems/06.jpg'),
+      getImagePath('/services/Electronic Systems & Sub Systems/34.jpg'),
+      getImagePath('/services/Electronic Systems & Sub Systems/35.jpg'),
+      getImagePath('/services/Electronic Systems & Sub Systems/36.jpg'),
     ],
   },
   {
