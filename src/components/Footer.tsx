@@ -34,9 +34,11 @@ export const Footer = () => {
 
   const footerLinks = {
     company: [
+      { name: 'Home', href: '#home', isSection: true },
       { name: 'About Us', href: '#about', isSection: true },
       { name: 'Services', href: '#services', isSection: true },
-      // { name: 'Products', href: '#products' },
+      { name: 'Why Choose Us', href: '#why-choose-us', isSection: true },
+      { name: 'Testimonials', href: '#testimonials', isSection: true },
       { name: 'Contact', href: '#contact', isSection: true },
     ],
     services: [

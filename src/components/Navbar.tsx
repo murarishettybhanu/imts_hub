@@ -9,7 +9,7 @@ const navLinks = [
   { name: 'Home', sectionId: 'home' },
   { name: 'About', sectionId: 'about' },
   { name: 'Services', sectionId: 'services' },
-  { name: 'Products', sectionId: 'products' },
+  { name: 'Why Choose Us', sectionId: 'why-choose-us' },
   { name: 'Testimonials', sectionId: 'testimonials' },
   { name: 'Contact', sectionId: 'contact' },
 ];
